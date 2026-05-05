@@ -1,0 +1,13 @@
+Variabel alat1 dideklarasikan dengan tipe referensi PerangkatPintar (Superclass). 
+Karena di dalam kelas PerangkatPintar tidak pernah didefinisikan metode aturKecerahan(), 
+maka compiler langsung menolak (error) karena menganggap metode itu tidak ada (cannot find symbol).
+
+Cara memperbaikinya adalah Untuk memperbaikinya, kita harus memberi tahu compiler secara eksplisit bahwa referensi alat1 tersebut sebenarnya menyimpan objek LampuPintar. 
+Kita melakukannya dengan teknik Downcasting.
+
+Perbaikan kode:
+
+PerangkatPintar alat1 = new LampuPintar();
+
+// Perbaikan: Lakukan casting (LampuPintar) terlebih dahulu,
+((LampuPintar) alat1).aturKecerahan(75, "Putih");
